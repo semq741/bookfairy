@@ -2,6 +2,7 @@
 namespace Rigo\Controller;
 
 use Rigo\Types\Course;
+use Rigo\Types\Post;
 
 class SampleController{
     
@@ -13,7 +14,12 @@ class SampleController{
     
     public function getDraftCourses(){
         $query = Course::all([ 'status' => 'draft' ]);
-        return $query->posts;
+        return $query->post;
+    }
+    
+    public function getDraftPost(){
+        $query = Post::all([ 'status' => 'draft' ]);
+        return $query->post;
     }
     
 }
