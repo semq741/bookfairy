@@ -18,8 +18,12 @@ class SampleController{
     }
     
     public function getDraftPost(){
-        $query = Post::all([ 'status' => 'draft' ]);
-        return $query->post;
+        $args = array(
+            'post_type' => 'post'
+            );
+        
+        $query = get_posts($args);
+        return $query;
     }
     
 }
